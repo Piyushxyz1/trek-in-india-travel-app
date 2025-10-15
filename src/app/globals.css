@@ -1,0 +1,39 @@
+
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+
+body {
+     font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+     letter-spacing: .03em;
+}
+
+
+.slick-slide > div{
+
+
+  position: relative;
+}
+
+/* hide-scrollbar class */
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+
+
+
+

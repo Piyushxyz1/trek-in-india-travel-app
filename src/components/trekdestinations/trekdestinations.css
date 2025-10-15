@@ -1,0 +1,79 @@
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .card-title {
+    font-size: 1.8rem;
+  }
+  
+  .card-subtitle {
+    font-size: 1rem;
+  }
+  
+  .custom-prev,
+  .custom-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .card-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .learn-more-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .difficulty-badge,
+  .duration-chip {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+  
+  .custom-prev,
+  .custom-next {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .custom-prev {
+    left: 15px;
+  }
+  
+  .custom-next {
+    right: 15px;
+  }
+}
+
+
+

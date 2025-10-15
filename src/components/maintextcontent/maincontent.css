@@ -1,0 +1,46 @@
+.trekking-intro {
+    width: 100%;
+     
+  margin: 0 auto;
+  padding: 2vw 1vw ;  ;
+margin: 0 auto;;
+}
+
+.trekking-intro h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color:#172541
+
+ ;
+    
+    text-align: center;
+  }
+  
+  .trekking-intro h3 {
+    font-size: 26px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #34495e;
+  }
+  
+  .trekking-intro h4 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+   color:#313137;
+
+  }
+  
+  .trekking-intro p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color:#313137;
+
+  }
+  
+  .trekking-intro .bold {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  

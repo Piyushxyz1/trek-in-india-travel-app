@@ -1,0 +1,28 @@
+
+  
+  .breadcrumb a {
+    text-decoration: none;
+    color:#f47a2a;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .breadcrumb span {
+    color:#666;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+
+  @media screen and (max-width:540px) {
+      .breadcrumb a{
+        font-size: 0.8rem;
+
+      }
+
+      
+  .breadcrumb span {
+    color:#666;
+    font-size: 0.8rem;
+  }
+  }

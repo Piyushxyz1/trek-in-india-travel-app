@@ -1,0 +1,221 @@
+
+.section-package-gallery-lists>h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #172541
+
+ ;
+  margin-bottom: 20px;
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 40px;
+
+}
+
+.grid-container .card {
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  /* Ensures content inside the card stacks vertically */
+
+}
+
+
+
+.grid-container .card .card-duration-challenge {
+
+  position: absolute;
+  top: 0%;
+  left: 0;
+
+}
+
+
+.grid-container .card .card-duration-challenge span {
+
+
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: linear-gradient(90deg, #f47a2a 0%, #00f2fe 100%);
+  padding: 10px;
+
+
+}
+
+
+.card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+
+}
+
+/* Card Content */
+.card-content {
+  text-align: left;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+  color: #172541
+
+ 000;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+
+}
+
+.card-content p {
+  color: #313137;
+
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  margin-top: 0px;
+
+}
+
+.card-content-ratings-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-rating {
+  display: flex;
+
+}
+
+
+/* For tablets or medium-sized screens */
+@media (max-width: 768px) {
+
+
+.section-package-gallery-lists>h2{
+
+  text-align: center;
+  font-size: 1.10rem;
+}
+
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    gap: 20px;
+  
+  }
+
+  .card img {
+    height: 170px;
+    /* Adjust image height for better fit */
+  }
+}
+
+
+
+
+
+  .card-content h3 {
+
+
+    font-size: 10px;
+    margin: 2px 0;
+  }
+
+
+
+  .card-content p {
+
+
+
+    font-size: 9px;
+    margin-top: 2px;
+
+  }
+
+  .card-content span:nth-child(3) {
+
+
+
+    white-space: nowrap;
+    font-size: 8px;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    /* Let the card height adjust automatically based on content */
+  }
+
+  .card img {
+    height: 70px;
+    /* Adjust image height for better fit */
+    object-fit: cover;
+    /* Ensure image maintains its aspect ratio */
+  }
+
+  .card-content {
+    padding: 10px;
+    /* Adjust padding for smaller screens */
+  }
+
+  .card-content-price>span {
+
+    font-size: 10px;
+    font-weight: 300;
+
+  }
+
+
+
+.explore-more-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+  gap: 20px;
+  position: relative;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+
+ background:#f47a2a;
+  opacity: 0.4;
+}
+
+.explore-more-btn {
+
+  padding: 12px 23px;
+  border-radius: 55px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  /* background: linear-gradient(90deg, #f47a2a 0%, #00f2fe); */
+  background-size: 200% 100%;
+  border: 1px solid 
+ #f47a2a;
+ 
+  transition: background-position 0.4s ease-in-out;
+  color: #313137;
+  font-size: 1rem;
+}
+
+
+.explore-more-btn:hover {
+
+  cursor: pointer;
+  background-position: -100% 0;
+  /* Moves gradient to create a sliding effect */
+  ;
+}

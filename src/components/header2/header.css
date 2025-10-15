@@ -1,0 +1,116 @@
+.banner-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+
+.banner-slider .banner-section-button{
+  padding:15px 23px;
+  font-weight:800;
+  font-size: 15px;
+  border:none;
+
+ background:#f47a2a;
+  background-size: 200% 100%; /* Make gradient larger for effect */
+  transition: background-position 0.4s ease-in-out;
+  color:#ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.banner-slider button:hover {
+  color:#ffffff;
+  background-position: -100% 0; /* Moves gradient to create a sliding effect */
+}
+
+
+.banner-image {
+  width: 100%;
+  height:100vh;
+  object-fit: cover;
+}
+
+.banner-text {
+position: absolute;
+top: 50%;
+left: 10%; /* Moves text to the left */
+transform: translateY(-50%); /* Centers vertically */
+color: #ffffff;
+text-align: left; /* Aligns text to the left */
+font-size: 45px;
+font-weight: 700;
+max-width: 50%;
+padding: 20px 30px;
+border-radius: 10px;
+z-index: 999;
+animation: fadeIn 0.3s ease-in; 
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Overlay to darken the image */
+.banner-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom:1%;
+background-color: rgba(0, 0,0, 0.2);
+
+}
+
+/* Ensure text appears above overlay */
+.banner-text {
+  position: absolute;
+  z-index: 999;
+}
+
+/* Slick arrows customization */
+.slick-prev {
+  left:2vw;
+}
+
+.slick-next {
+  right:2vw;
+}
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: white;
+  font-size: 30px;
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .banner-text {
+    font-size: 2rem;
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-text {
+    font-size: 1.5rem;
+    max-width: 80%;
+  }
+}

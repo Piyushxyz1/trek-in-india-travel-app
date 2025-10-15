@@ -1,0 +1,425 @@
+"use client"
+import React from 'react';
+
+import { useState } from 'react';
+import Breadcrumb from '@/components/breadcrumbs/Breadcrumb';
+import ImageGrid from '../ImageGrid';
+import "../itinerarypage.css";
+import Incursion from '@/components/incursions/Incursion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import TrekCardSlider from '@/components/treckcardslider/TrekCardSlider';
+import trekData from '../../../trekdestinationcard/trekdata';
+
+const DeoTibbaBaseCampTrek = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+  const [activeTab, setActiveTab] = useState('inclusions');
+  const [openDay, setOpenDay] = useState(null);
+
+  const breadcrumbPath = [
+    { href: "/trekking-in-himachal", label: "Trekking in Himachal" },
+    { label: "Chandra Tal Trek" },
+  ];
+
+
+
+  const tabs = [
+    { name: "Inclusions", key: "inclusions" },
+    { name: "Exclusions", key: "exclusions" },
+    { name: "Cancellation Policy", key: "cancellation" }
+  ];
+
+  const TrekData = trekData.filter(trek => trek.region === 'Himachal');
+
+  const toggleDay = (day) => {
+    setOpenDay(openDay === day ? null : day);
+  };
+
+
+  const images = [
+    '/images/trekking-tours/himachal/itinerary-images/deo-tibba-base-camp-1.webp',
+    '/images/trekking-tours/himachal/itinerary-images/deo-tibba-base-camp-2.webp',
+    '/images/trekking-tours/himachal/itinerary-images/deo-tibba-base-camp-3.webp',
+    '/images/trekking-tours/himachal/itinerary-images/deo-tibba-base-camp-4.webp',
+    '/images/trekking-tours/himachal/itinerary-images/deo-tibba-base-camp-.webp',
+    
+  ];
+
+  const activities = [
+    {
+      title: 'Photoshoot Session',
+      description: 'Professional photoshoot with our team',
+      date: '2025-04-15'
+    },
+    {
+      title: 'Editing Workshop',
+      description: 'Learn advanced photo editing techniques',
+      date: '2025-04-02'
+    },
+  ];
+
+  const slides = [
+        {
+            image: "/images/beas-kund.webp",
+            alt: "Jeep Safari in Himalayas",
+            caption: "Explore the majestic Himalayas by Jeep"
+        },
+        {
+            image: "/images/banner3.jpg",
+            alt: "Ladakh Jeep Safari",
+            caption: "The rugged beauty of Ladakh"
+        },
+        {
+            image: "/images/banner10.webp",
+            alt: "Uttarakhand Jeep Safari",
+            caption: "Spiritual journey through Uttarakhand"
+        }
+    ];
+
+
+  return (
+
+
+    <>
+      <Breadcrumb path={breadcrumbPath} />
+      <section className='itinerary-page-section-first'>
+        <div className='itinerary-page_container  max-w-4xl md:max-w-6xl  xl:max-w-7xl  mx-auto px-4 md:px-8 '>
+
+          <h1 className="text-xl sm:text-2xl  xl:text-4xl font-semibold text-[#172541] mt-0 md:mt-1 mb-0 md:mb-2 xl:mb-4">Deo Tibba Base Camp Trek</h1>
+
+
+
+          <div className='itinerary-package-desc'>
+            <div className="itinerary-package-desc-details">
+              <div className="itinerary-package-desc-detail-grid">
+                <div className="itinerary-package-desc-detail-item">
+                  <div className="detail-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="label">Area</div>
+                    <div className="value">Zanskar (Ladakh)</div>
+                  </div>
+                </div>
+
+                <div className="itinerary-package-desc-detail-item">
+                  <div className="detail-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="label">Season</div>
+                    <div className="value">Mid Jan to End Feb</div>
+                  </div>
+                </div>
+
+                <div className="itinerary-package-desc-detail-item">
+                  <div className="detail-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 3L4 9v12h16V9l-8-6zm-2.25 9.5c.69 0 1.25.56 1.25 1.25S10.44 15 9.75 15s-1.25-.56-1.25-1.25.56-1.25 1.25-1.25zM17 18h-1v-1.5H8V18H7v-7h1v4.5h3.5V12H17v6z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="label">Altitude</div>
+                    <div className="value">3850 mts/12628 ft</div>
+                  </div>
+                </div>
+
+                <div className="itinerary-package-desc-detail-item">
+                  <div className="detail-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="label">Duration</div>
+                    <div className="value">13 days</div>
+                  </div>
+                </div>
+
+                <div className="itinerary-package-desc-detail-item">
+                  <div className="detail-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.8L18 10v8h-2v-6H8v6H6v-8l6-4.2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="label">Grade</div>
+                    <div className="value">Hard</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <ImageGrid images={images} activities={activities} />
+
+      <section  className = 'bg-white  py-4'>
+
+        <div className='max-w-4xl md:max-w-6xl  xl:max-w-7xl  mx-auto px-4 md:px-8'>
+          <h2 className="text-xl sm:text-2xl  xl:text-4xl font-semibold text-[#172541] mt-0 md:mt-1 mb-0 md:mb-2 xl:mb-4">Overview</h2>
+          <p className="mb-4 text-[#313137] text-[0.8rem] sm:text-[0.8rem] md:text-[0.9rem] xl:text-[1rem]">The major attraction remains the Deo Tibba peak, which looms at an elevation of 6,001 meters, and is surrounded by several other 6thousander peaks. Indrasan at an elevation of 6,221 meters also dominates the region and is a treat to the eyes from the vicinity of Hampa Pass. One of the popular alpine treks in Himachal Pradesh, the Hampta Pass trek occupies the mind of devoted trekkers during the peak summer season in India. Lying at an elevation of about 4,268 meters, the Hampta Pass stands as a bridge that connects the Kullu valley with Lahaul. The Hampta Pass trek passes through thick forest of walnut, oak and pine trees, lush green alpine meadows crisscrossed by numerous small streams and several villages tucked in the mountains. The journey truly is a threshold of natural spectrum and remote culture. All though the entire journey is easy to moderate but it turns out to be the most difficult part when it embarks upon a steep climb to Hampta Pass from Balu Ka Gera. The tracks at certain levels become tricky and narrow and further the trail slows down when you step on to the thick bed of snow.</p>
+          <p className="mb-4 text-[#313137] text-[0.8rem] sm:text-[0.8rem] md:text-[0.9rem] xl:text-[1rem]">The Hampta Pass trek, which is one of the high altitude treks in the Indian Himalayan region, stretches from an elevation of 2,050 meters to 4,268 meters. The actual trail commences from Prini, which is a few hours of drive from Manali. From Prini the trail leads to Pandu Ropa via the village of Saythen. From a certain point on this trail one can capture the panoramic view of the Kullu valley. The trail from Pandu Ropa continues to Chikka, which is further 5 - 6 hours of trek uphill through thick forest and meadows dotted with colourful flowers. Here you will encounter a few patches of snow. The trek to Hampta Pass then is followed by Balu Ka Gera and thereafter descends to Chattru. From Chattru the route turns to Solang, which is a steep trek downhill and thereafter wheels to Manali.</p>
+          <p className="mb-4 text-[#313137] text-[0.8rem] sm:text-[0.8rem] md:text-[0.9rem] xl:text-[1rem]">The Hampta Pass trek is one of the most beautiful alpine treks in Himachal Pradesh, which is recommended for experienced trekkers. The best time to hit the tracks is during the months of May, June, July and September and October.</p>
+
+        </div>
+
+      </section>
+
+      <section className="itinerary-section py-4 ">
+        <div className='itinerary-content max-w-4xl md:max-w-6xl  xl:max-w-7xl  mx-auto px-4 md:px-8'>
+          <h2 className="text-xl sm:text-2xl  xl:text-4xl font-semibold text-[#172541] mt-0 md:mt-1 mb-0 md:mb-2 xl:mb-4">Hampta Pass Trekking Tours Trek Itinerary</h2>
+
+          <div className="itinerary-flex-container">
+            <div className="timeline">
+
+              {/* Day 01 */}
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(1)} className="dropdown-title">
+                    <span><b>Day 01</b>Arrive Delhi</span>
+                    <FontAwesomeIcon icon={openDay === 1 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 1 ? 'open' : ''}`}>
+                    <p>
+                      On arrival met our representative and then transfer to hotel for overnight stay.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 02 */}
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(2)} className="dropdown-title">
+                    <span><b>Day 02</b> Delhi - Manali</span>
+                    <FontAwesomeIcon icon={openDay === 2 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 2 ? 'open' : ''}`}>
+                    <p>In the morning half day sightseeing and in the evening drive to Manali by AC Volvo coach. Overnight journey.</p>
+                  </div>
+                </div>
+              </div>
+              {/* Day 03 */}
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(3)} className="dropdown-title">
+                    <span><b>Day 03</b>Manali</span>
+                    <FontAwesomeIcon icon={openDay === 3 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 3 ? 'open' : ''}`}>
+                    <p>Arrival at Manali by morning. On arrival transfer to hotel for relax. At leisure visit Hadimba Devi Temple, old Manali, Tibetan Monastery and the mall. Overnight stay in the hotel.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 04 */}
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(4)} className="dropdown-title">
+                    <span><b>Day 04</b>Manali - Pandu Ropa 4 hrs</span>
+                    <FontAwesomeIcon icon={openDay === 4 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 4 ? 'open' : ''}`}>
+                    <p>
+                      We drive to Prini and then from Prini we reach Pando Ropa, 4 hours trek which goes steeply along side of Hamta Nala through forest. Overnight in camp.in tents.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 05 */}
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(5)} className="dropdown-title">
+                    <span><b>Day 05</b>Pandu Ropa - Chikka</span>
+                    <FontAwesomeIcon icon={openDay === 5 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 5 ? 'open' : ''}`}>
+                    <p>Gradual up trek passes through forest and meadow up to Chikka camp, and ideal site with water and firewood. Overnight in tents.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 06 */}
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(6)} className="dropdown-title">
+                    <span><b>Day 06</b>Chikka - Balu Ka Gera</span>
+                    <FontAwesomeIcon icon={openDay === 6 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 6 ? 'open' : ''}`}>
+                    <p>
+                      We trek uphill, a steep climb, to Juara and then gradual climb up to the camp site at Balu Ka Gera. Overnight in tents.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 07 */}
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(7)} className="dropdown-title">
+                    <span><b>Day 07</b>Balu Ka Gera - Hampta Pass</span>
+                    <FontAwesomeIcon icon={openDay === 7 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 7 ? 'open' : ''}`}>
+                    <p>
+                      Steep ascent up to Hampta Pass for 3 kms and then descent on the other side in steep slope up to Camp Site. Mt. Deo Tibba and Indrasan are visible along with a wide view of the Lahaul Valley.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 08 */}
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(8)} className="dropdown-title">
+                    <span><b>Day 08</b>Hampta Pass - Chatru</span>
+                    <FontAwesomeIcon icon={openDay === 8 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 8 ? 'open' : ''}`}>
+                    <p>
+                      On the 8th day of Hampta Pass Trek, we make a steep descent up to Chatru Camp site. Overnight in camp.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 09 */}
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(9)} className="dropdown-title">
+                    <span><b>Day 09</b>Chatru - Solang</span>
+                    <FontAwesomeIcon icon={openDay === 9 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 9 ? 'open' : ''}`}>
+                    <p>The Hampta Pass Trek continues and we reach Solang from Chatru. Overnight in camp.</p>
+                  </div>
+                </div>
+              </div>
+              {/* Day 09 */}
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(10)} className="dropdown-title">
+                    <span><b>Day 10</b>Solang - Manali - Delhi</span>
+                    <FontAwesomeIcon icon={openDay === 10 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 10 ? 'open' : ''}`}>
+                    <p>In the morning after breakfast drive to Manali and visit Hadimba Devi temple, old Manali and Vashisth Village (hot water spring). In the evening drive to Delhi by AC Volvo coach. Overnight journey.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="timeline-item">
+                <div className="timeline-content">
+                  <h3 onClick={() => toggleDay(11)} className="dropdown-title">
+                    <span><b>Day 11</b>Delhi</span>
+                    <FontAwesomeIcon icon={openDay === 11 ? faChevronUp : faChevronDown} />
+                  </h3>
+                  <div className={`dropdown-content ${openDay === 11 ? 'open' : ''}`}>
+                    <p>Arrival at Delhi by morning. On arrival transfer to hotel for relax. In the evening drive to international airport to catch onwards flight.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div className="booking-form">
+
+              <div className="form-cta-section modern-cta">
+                <div className="form-cta-ribbon premium-badge">
+                  <span>✨ Best Value Guarantee</span>
+                </div>
+
+                <div className="form-cta-content">
+                  <div className="pricing-header">
+                    <h3>All-Inclusive Luxury Package</h3>
+                    <p className="package-description">Experience the perfect blend of adventure and relaxation with our carefully curated itinerary</p>
+                  </div>
+
+                  <div className="price-container">
+                    <p className="price-tag">$710 <span className="price-unit">USD</span></p>
+                    <p className="price-note">per person (based on double occupancy)</p>
+                  </div>
+
+                  <div className="package-details">
+                    <div className="detail-item">
+                      <svg className="detail-icon" viewBox="0 0 24 24">
+                        <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
+                      </svg>
+                      <span>7 Nights 8 Days</span>
+                    </div>
+                    <div className="detail-item">
+                      <svg className="detail-icon" viewBox="0 0 24 24">
+                        <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
+                      </svg>
+                      <span>5-Star Accommodations</span>
+                    </div>
+                    <div className="detail-item">
+                      <svg className="detail-icon" viewBox="0 0 24 24">
+                        <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
+                      </svg>
+                      <span>All Meals Included</span>
+                    </div>
+                    <div className="detail-item">
+                      <svg className="detail-icon" viewBox="0 0 24 24">
+                        <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
+                      </svg>
+                      <span>Private Guided Tours</span>
+                    </div>
+                  </div>
+
+                  <div className="cta-actions">
+                    <button onClick={openModal} className="form-book-trip-button primary-cta">
+                      BOOK THIS TRIP
+                    </button>
+                    <button className="secondary-cta">
+                      REQUEST ITINERARY
+                    </button>
+                  </div>
+
+                  <div className="trust-badges">
+                    <div className="trust-item">
+                      <svg className="trust-icon" viewBox="0 0 24 24">
+                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z" />
+                      </svg>
+                      <span>Secure Booking</span>
+                    </div>
+                    <div className="trust-item">
+                      <svg className="trust-icon" viewBox="0 0 24 24">
+                        <path d="M12,15A2,2 0 0,1 10,13A2,2 0 0,1 12,11A2,2 0 0,1 14,13A2,2 0 0,1 12,15M12,17C9.24,17 7,14.76 7,12C7,9.24 9.24,7 12,7C14.76,7 17,9.24 17,12C17,14.76 14.76,17 12,17M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2Z" />
+                      </svg>
+                      <span>24/7 Support</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* SIMPLE MODAL */}
+              {isOpen && (
+                <div className="form-modal-overlay">
+                  <div className="form-modal-content">
+                    <button className="form-modal-close" onClick={closeModal}>
+                      &times;
+                    </button>
+                    <TripBookingForm />
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+      <Incursion />
+      <TrekCardSlider TrekData={TrekData} />
+
+    </>
+  )
+}
+
+export default DeoTibbaBaseCampTrek;
